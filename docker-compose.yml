@@ -5,9 +5,15 @@ services:
     image: 'mysql:5.7'
     restart: always
     environment:
+      MYSQL_DATABASE: chat
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-      MYSQL_ROOT_PASSWORD: ''
     ports:
       - 3306:3306
     volumes:
-      - mysql:/var/lib/mysql
+      - volume-db:/var/lib/mysql
+
+volumes:
+  volume-db:

@@ -15,6 +15,11 @@ A go service using the Gin&GorillarWS with Clean Architecture
 GO 1.21 
 
 ## Installaion & Setup
+(Optional) Setup the Database, This source code provide the docker image for start the database 
+```bash
+# Start the database [Optional]
+$ docker compose up -d 
+```
 ```bash
 # Start the database [Optional]
 $ docker compose up 
