@@ -20,6 +20,8 @@ GO 1.21
 # Start the database [Optional]
 $ docker compose up -d 
 ```
+Please feel free to using the Client or cli to create a database, username, password. 
+------
 ```bash
 # Start the database [Optional]
 $ docker compose up 
