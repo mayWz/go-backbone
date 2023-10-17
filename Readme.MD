@@ -33,6 +33,16 @@ $ go mod download
 $ go run cmd/server/main.go
 ```
 
+## Testing 
+
+To run test on this project. make sure to generate mock data before run test
+```bash
+# genereate mock repo, service
+make mockgen-all
+# run all test
+make test-all
+```
+
 ## Structure 
 ```
 ├── cmd

@@ -2,6 +2,7 @@ package app
 
 import (
 	"go-chat/internal/config"
+	"go-chat/internal/handler"
 	"go-chat/internal/service"
 	"log"
 
@@ -12,13 +13,15 @@ type Server struct {
 	router      *gin.Engine
 	db          *config.DB
 	userService service.UserService
+	userHandler handler.UserHandler
 }
 
-func NewServer(router *gin.Engine, db *config.DB, userService service.UserService) *Server {
+func NewServer(router *gin.Engine, db *config.DB, userService service.UserService, userHandler handler.UserHandler) *Server {
 	return &Server{
 		router:      router,
 		db:          db,
 		userService: userService,
+		userHandler: userHandler,
 	}
 }
 

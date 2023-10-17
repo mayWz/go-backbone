@@ -8,11 +8,11 @@ type UserResponse struct {
 }
 
 type UserFindByID struct {
-	ID string
+	ID string `json:"id" binding:"required"`
 }
 
 type UserCreate struct {
-	Name   string
-	Gender string
-	Email  *string
+	Name   string  `json:"name" binding:"required"`
+	Gender string  `json:"gender"`
+	Email  *string `json:"email" binding:"omitempty,email"`
 }

@@ -7,16 +7,12 @@ import (
 )
 
 type UserService interface {
-	Craete(input *schema.UserCreate) (*model.User, error)
+	FindByID(input schema.UserFindByID) (*model.User, error)
+	Create(input schema.UserCreate) (*model.User, error)
 }
 
 type userService struct {
 	userRepo repository.UserRepository
-}
-
-// Craete implements UserService.
-func (*userService) Craete(input *schema.UserCreate) (*model.User, error) {
-	panic("unimplemented")
 }
 
 func NewUserService(userRepo repository.UserRepository) *userService {
