@@ -34,3 +34,11 @@ func (mr *messageRepository) FindByID(input model.Message) (*model.Message, erro
 
 	return &message, nil
 }
+
+func (mr *messageRepository) Create(message model.Message) (*model.Message, error) {
+	if result := mr.db.Create(&message); result.Error != nil {
+		log.Fatalf("Database error: %v", result.Error)
+		return nil, result.Error
+	}
+	return &message, nil
+}

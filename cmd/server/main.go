@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"go-chat/internal/app"
 	"go-chat/internal/config"
+	"go-chat/internal/repository"
+	"go-chat/internal/service"
 	"log"
 	"os"
 
@@ -29,11 +31,20 @@ func run() error {
 	if err != nil {
 		return err
 	}
+	// Repository
+	userRepo := repository.NewUserRepository(db.DB)
+
+	// Services
+	userService := service.NewUserService(userRepo)
 
 	router := gin.Default()
 	router.Use(cors.Default())
 
-	server := app.NewServer(router, db)
+	server := app.NewServer(
+		router,
+		db,
+		userService,
+	)
 
 	// start the server
 	err = server.Run()

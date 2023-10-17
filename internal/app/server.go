@@ -2,20 +2,23 @@ package app
 
 import (
 	"go-chat/internal/config"
+	"go-chat/internal/service"
 	"log"
 
 	"github.com/gin-gonic/gin"
 )
 
 type Server struct {
-	router *gin.Engine
-	db     *config.DB
+	router      *gin.Engine
+	db          *config.DB
+	userService service.UserService
 }
 
-func NewServer(router *gin.Engine, db *config.DB) *Server {
+func NewServer(router *gin.Engine, db *config.DB, userService service.UserService) *Server {
 	return &Server{
-		router: router,
-		db:     db,
+		router:      router,
+		db:          db,
+		userService: userService,
 	}
 }
 
