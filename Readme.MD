@@ -34,8 +34,9 @@ $ go run cmd/server/main.go
 ```
 
 ## Testing 
-
 To run test on this project. make sure to generate mock data before run test
+We using mockgen to generate mock repository and service.
+for intall mockgen please find on this page (uber-go/mock)[https://github.com/uber-go/mock]
 ```bash
 # genereate mock repo, service
 make mockgen-all
