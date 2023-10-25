@@ -4,12 +4,14 @@ go 1.21.3
 
 require github.com/gin-gonic/gin v1.9.1
 
-require github.com/gin-contrib/cors v1.4.0
+require (
+	github.com/gin-contrib/cors v1.4.0
+	go.uber.org/mock v0.3.0
+)
 
 require (
-	go.uber.org/mock v0.3.0 // indirect
-	golang.org/x/mod v0.11.0 // indirect
-	golang.org/x/tools v0.6.0 // indirect
+	github.com/golang-jwt/jwt/v5 v5.0.0 // indirect
+	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 )
 
 require (
