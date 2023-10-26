@@ -25,6 +25,10 @@ func (us *userService) FindByID(input schema.UserFindByID) (*model.User, error) 
 	return us.userRepo.FindByID(model.User{ID: input.ID})
 }
 
+func (us *userService) Get() []model.User {
+	return us.userRepo.Get()
+}
+
 func (us *userService) Create(input schema.UserCreate) (*model.User, error) {
 	var userCreate = model.User{
 		Name:   &input.Name,
