@@ -4,17 +4,21 @@ go 1.21.3
 
 require github.com/gin-gonic/gin v1.9.1
 
-require github.com/gin-contrib/cors v1.4.0
+require (
+	github.com/gin-contrib/cors v1.4.0
+	go.uber.org/mock v0.3.0
+)
 
 require (
-	go.uber.org/mock v0.3.0 // indirect
-	golang.org/x/mod v0.11.0 // indirect
-	golang.org/x/tools v0.6.0 // indirect
+	github.com/golang-jwt/jwt/v5 v5.0.0 // indirect
+	github.com/gorilla/websocket v1.5.0 // indirect
+	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 )
 
 require (
 	github.com/bytedance/sonic v1.9.1 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gabriel-vasile/mimetype v1.4.2 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect

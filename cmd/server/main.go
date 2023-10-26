@@ -37,18 +37,24 @@ func run() error {
 
 	// Services
 	userService := service.NewUserService(userRepo)
+	authService := service.NewAuthService()
 
 	// Handler
 	userHandler := handler.NewUserHandler(userService)
+	chatHandler := handler.NewChatHandler()
 
 	router := gin.Default()
 	router.Use(cors.Default())
+	//router.Use(middleware.CorsMiddleware())
 
 	server := app.NewServer(
 		router,
+		&env,
 		db,
 		userService,
+		authService,
 		userHandler,
+		chatHandler,
 	)
 
 	// start the server

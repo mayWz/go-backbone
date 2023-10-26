@@ -33,6 +33,19 @@ $ go mod download
 $ go run cmd/server/main.go
 ```
 
+## Database Migration
+inn this project, we using golang-migrate to handle the database migration file. [Golang-migrate](https://github.com/golang-migrate/)
+
+```bash
+# Install golang-migrate
+$ brew install golang-migrate
+# Create a new migrate file 
+$ migrate create -ext sql -dir db/migrations -seq file_name
+# Run migration file, please replace database connection string
+$ migrate -database ‘mysql://user:password@tcp(host:port)/dbname?query’ -path db/migrations up
+```
+
+
 ## Testing 
 To run test on this project. make sure to generate mock data before run test
 We using mockgen to generate mock repository and service.

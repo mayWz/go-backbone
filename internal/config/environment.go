@@ -14,6 +14,7 @@ type ENV struct {
 	DatabasePassword string
 	DatabaseName     string
 	DatabasePort     string
+	SecertKey        string
 }
 
 func SetupENV() ENV {
@@ -29,8 +30,7 @@ func SetupENV() ENV {
 	dbPassword := os.Getenv("DB_PASSWORD")
 	dbName := os.Getenv("DB_NAME")
 	dbPort := os.Getenv("DB_PORT")
-
-	fmt.Print(dbHost)
+	secertKey := os.Getenv("SECRET_KEY")
 
 	return ENV{
 		ENV:              env,
@@ -39,5 +39,6 @@ func SetupENV() ENV {
 		DatabasePassword: dbPassword,
 		DatabaseName:     dbName,
 		DatabasePort:     dbPort,
+		SecertKey:        secertKey,
 	}
 }

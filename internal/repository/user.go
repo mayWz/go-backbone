@@ -11,6 +11,7 @@ import (
 type UserRepository interface {
 	FindByID(input model.User) (*model.User, error)
 	Create(user model.User) (*model.User, error)
+	Get() []model.User
 }
 
 type userRepository struct {
@@ -35,6 +36,12 @@ func (ur *userRepository) FindByID(input model.User) (*model.User, error) {
 	}
 
 	return &user, nil
+}
+
+func (ur *userRepository) Get() []model.User {
+	var users []model.User
+	ur.db.Find(&users)
+	return users
 }
 
 func (ur *userRepository) Create(user model.User) (*model.User, error) {
